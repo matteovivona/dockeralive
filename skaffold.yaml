@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: dockeralive
+build:
+  artifacts:
+    - image: tehkapa/dockeralive
+deploy:
+  kustomize:
+    paths:
+      - k8s

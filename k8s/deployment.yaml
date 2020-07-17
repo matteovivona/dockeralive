@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockeralive
+  labels:
+    app: dockeralive
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockeralive
+  template:
+    metadata:
+      labels:
+        app: dockeralive
+    spec:
+      containers:
+        - name: dockeralive
+          image: tehkapa/dockeralive
+          resources: {}
+          ports:
+            - containerPort: 8080
